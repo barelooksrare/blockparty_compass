@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:blockparty_compass/default_values/design.dart';
+import 'package:blockparty_compass/views/carousel.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -57,7 +58,14 @@ class _StartRouteState extends State<StartRoute> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => CarouselRoute(),
+                      ),
+                    );
+                  },
                   style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith(
                         (states) {
