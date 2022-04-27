@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+import 'package:blockparty_compass/data/solanaHelper.dart';
 import 'package:blockparty_compass/default_values/design.dart';
 import 'package:blockparty_compass/views/stats.dart';
 import 'package:flutter/material.dart';
@@ -212,14 +213,12 @@ class _CarouselRouteState extends State<CarouselRoute> {
                                       ),
                                       textAlign: TextAlign.center,
                                     ),
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (BuildContext context) =>
-                                              CarouselRoute(),
-                                        ),
-                                      );
+                                    onPressed: () async {
+                                      SolanaHelper solanaHelper =
+                                          SolanaHelper();
+                                      String string = await solanaHelper.getTx(
+                                          "63vNxx8pbExEm9Z3n2Efm8ab5dRu9ZrAmJEtCmLy95gRLzE9GJfv6uXyBeytukugMCvF3d1dkhg5eMSZaR4jtGm2");
+                                      print("Returned Object: " + string);
                                     },
                                     style: ButtonStyle(
                                         overlayColor:
